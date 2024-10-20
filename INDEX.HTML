@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 10px;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('recipes')">Recipes</a></li>
+                <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+                <li><a href="#" onclick="showPage('nutrition')">Nutrition</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="home" class="page active">
+            <h1>Welcome to Our Food Website!</h1>
+            <p>Discover delicious recipes, healthy eating tips, and more.</p>
+        </div>
+        <div id="recipes" class="page">
+            <h1>Recipes</h1>
+            <p>Here you can find a variety of delicious recipes!</p>
+        </div>
+        <div id="blog" class="page">
+            <h1>Blog</h1>
+            <p>Read our latest articles on food trends and cooking tips!</p>
+        </div>
+        <div id="nutrition" class="page">
+            <h1>Nutrition Information</h1>
+            <p>Learn about the nutritional value of your favorite foods!</p>
+        </div>
+        <div id="contact" class="page">
+            <h1>Contact Us</h1>
+            <p>Have questions? Reach out to us!</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Food Website</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
